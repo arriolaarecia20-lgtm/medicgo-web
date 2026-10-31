@@ -170,21 +170,13 @@
     ]
   ];
 
-  const fotos = [
-    "doctor-0.jpg",
-    "hero.jpg",
-    "doctor-1.jpg",
-    "doctor-3.jpg",
-    "hero.jpg"
-  ];
-
   const medicos = especialidades.flatMap(
     (especialidad, indiceEspecialidad) =>
       nombres[indiceEspecialidad].map((nombre, indice) => ({
         id: `med-${indiceEspecialidad}-${indice}`,
         nombre,
         especialidad: especialidad.nombre,
-        foto: `assets/${fotos[indice]}`,
+        foto: `assets/medicos/med-${indiceEspecialidad}-${indice}.jpg`,
         valoracion: (
           4.5 + ((indiceEspecialidad + indice) % 5) / 10
         ).toFixed(1),
