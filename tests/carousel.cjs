@@ -122,6 +122,8 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
   const go=async(file)=>{await call('Page.navigate',{url:base+file});await waitFor('document.readyState === "complete"');};
   const navigateClick=async(selector,ending)=>{await click(selector);await waitFor('location.pathname.endsWith('+JSON.stringify(ending)+') && document.readyState === "complete"');};
 
+  // Keep the pointer on the background before loading, as in a normal visit.
+  await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:800,y:300});
   await go('index.html');
   const current=()=>evaluate('document.querySelector(".hero-slide.is-active").getAttribute("aria-label")');
   assert.equal(await current(),'1 de 3');
@@ -129,6 +131,7 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
   await pause(800);assert.equal(await current(),'2 de 3');
   await pause(4000);assert.equal(await current(),'3 de 3');
   await pause(4000);assert.equal(await current(),'1 de 3');
+  assert(await evaluate('location.pathname.endsWith("index.html") && document.querySelector("#main-nav [aria-current=page]").getAttribute("href")==="index.html"'));
   await click('.hero-play');await pause(4200);assert.equal(await current(),'1 de 3');
   await click('[data-direction="1"]');assert.equal(await current(),'2 de 3');
   await click('[data-direction="-1"]');assert.equal(await current(),'1 de 3');
@@ -140,7 +143,7 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
   await evaluate('document.activeElement.blur()');
   await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:1,y:1});
   await pause(4200);assert.equal(await current(),'2 de 3');
-  const box=await evaluate('(()=>{const b=document.querySelector(".hero-carousel").getBoundingClientRect();return {x:b.x+20,y:Math.max(100,b.y+20)}})()');
+  const box=await evaluate('(()=>{const e=document.querySelector(".hero-controls");e.scrollIntoView({block:"center",behavior:"instant"});const b=e.getBoundingClientRect();return {x:b.x+20,y:b.y+20}})()');
   await call('Input.dispatchMouseEvent',{type:'mouseMoved',...box});
   await pause(4200);assert.equal(await current(),'2 de 3');
   await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:1,y:1});

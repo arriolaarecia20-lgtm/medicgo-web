@@ -8,6 +8,7 @@
   const slides = [...carousel.querySelectorAll('.hero-slide')];
   const indicators = [...carousel.querySelectorAll('.hero-indicators button')];
   const play = carousel.querySelector('.hero-play');
+  const controls = carousel.querySelector('.hero-controls');
   const status = carousel.querySelector('.hero-status');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   let index = 0, timer = null, playing = !motion.matches;
@@ -34,14 +35,16 @@
     status.textContent = `Fotografía ${index + 1} de ${slides.length}`;
     schedule();
   }
-  carousel.querySelector('.hero-controls').hidden = false;
+  controls.hidden = false;
   carousel.querySelectorAll('[data-direction]').forEach(button => {
     button.addEventListener('click', () => show(index + Number(button.dataset.direction)));
   });
   indicators.forEach((button, i) => button.addEventListener('click', () => show(i)));
   play.addEventListener('click', () => { playing = !playing; schedule(); });
-  carousel.addEventListener('mouseenter', () => { hovering = true; schedule(); });
-  carousel.addEventListener('mouseleave', () => { hovering = false; schedule(); });
+  // A pointer resting over the full-screen background must not block startup.
+  // Pause while the user interacts with the controls instead.
+  controls.addEventListener('mouseenter', () => { hovering = true; schedule(); });
+  controls.addEventListener('mouseleave', () => { hovering = false; schedule(); });
   carousel.addEventListener('focusin', () => { focused = true; schedule(); });
   carousel.addEventListener('focusout', event => {
     if (!carousel.contains(event.relatedTarget)) { focused = false; schedule(); }
