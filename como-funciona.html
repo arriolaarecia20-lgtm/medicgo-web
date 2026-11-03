@@ -11,8 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guia.css">
   <script src="js/data.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/guia.js" defer></script>
 </head>
 <body>
   <!-- Identidad visual compartida del proyecto. -->
@@ -39,7 +41,21 @@
     </div>
   </header>
 
-  <main id="contenido"><section class="section container"><h1>Cómo funciona Medic GO</h1><p class="lead">Encuentra una especialidad, compara perfiles y organiza tu consulta a domicilio paso a paso.</p><ol class="guide"><li><h2>Elige una especialidad</h2><p>Explora el catálogo y su descripción para conocer el enfoque de cada área.</p></li><li><h2>Compara médicos</h2><p>Busca por nombre y filtra por especialidad, precio, valoración o disponibilidad.</p></li><li><h2>Revisa el perfil</h2><p>Consulta la fotografía, experiencia, descripción y tarifa antes de reservar.</p></li><li><h2>Selecciona fecha y hora</h2><p>Elige un horario futuro en los próximos 60 días. Los horarios ocupados en este navegador quedan deshabilitados.</p></li><li><h2>Revisa y confirma</h2><p>Comprueba el médico, fecha, hora y precio. Tu selección se guarda en este navegador, sin datos personales ni pagos.</p></li><li><h2>Consulta, cancela o reprograma</h2><p>Abre Mis reservas para revisar tu selección, cancelarla o reprogramarla. Al reprogramar, selecciona una nueva fecha y hora y confirma el cambio. El horario anterior se libera solo cuando se guarda el nuevo. Las reservas no se sincronizan con otros dispositivos y se pierden si borras el almacenamiento del navegador.</p></li></ol><div class="actions"><a class="btn" href="medicos.html">Buscar médico</a><a class="btn2" href="mis-reservas.html">Mis reservas</a></div></section></main>
+  <main id="contenido" class="how-guide">
+    <section class="section container">
+      <div class="guide-intro"><span class="guide-eyebrow">TU CONSULTA, PASO A PASO</span><h1>Cómo funciona Medic GO</h1><p class="lead">De encontrar tu especialidad a tener tu consulta organizada. Descubre cómo hacerlo en seis pasos, a tu ritmo.</p></div>
+      <div class="guide-layout" id="interactive-guide" hidden>
+        <nav class="guide-steps" aria-label="Pasos de la guía"><ol id="guide-steps"></ol></nav>
+        <div class="guide-card">
+          <p class="guide-progress" id="guide-progress" role="status" aria-live="polite" aria-atomic="true">Paso 1 de 6</p>
+          <div id="guide-panel" role="region" aria-labelledby="guide-title" tabindex="-1"></div>
+          <div class="guide-controls"><button class="btn2" id="guide-prev" type="button">← Anterior</button><button class="btn" id="guide-next" type="button">Siguiente →</button></div>
+        </div>
+      </div>
+      <noscript><p>Explora las <a href="especialidades.html">especialidades</a>, compara <a href="medicos.html">médicos</a>, revisa su perfil y opiniones, elige fecha y hora y confirma tu consulta. Después puedes <a href="mis-reservas.html">consultar tus reservas</a>.</p></noscript>
+      <div class="guide-finish"><div><h2>Tu próximo paso, sentirte mejor acompañado.</h2><p>Encuentra al profesional que se adapte a lo que necesitas.</p></div><a class="btn big" href="medicos.html">Buscar mi médico</a></div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container foot-grid">

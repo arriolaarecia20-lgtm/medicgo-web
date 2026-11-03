@@ -1,0 +1,55 @@
+﻿.how-guide .guide-intro{max-width:800px;margin-bottom:36px}
+.how-guide .guide-eyebrow{display:block;color:var(--blue-d);font-weight:600;letter-spacing:2px;font-size:12px;margin-bottom:14px}
+.how-guide .lead{margin-top:18px}
+.how-guide .guide-layout{display:grid;grid-template-columns:minmax(260px, .8fr) minmax(0,1.6fr);gap:28px;align-items:start}
+.how-guide .guide-steps ol{display:grid;gap:10px}
+.how-guide .guide-steps button{font:inherit;color:var(--navy);display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:17px 18px;border:1px solid var(--line);border-radius:16px;background:white;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s}
+.how-guide .guide-steps button:hover{border-color:var(--blue)}
+.how-guide .guide-steps button[aria-current]{background:var(--soft);border:2px solid var(--blue);padding:16px 17px;font-weight:600;box-shadow:0 6px 18px #1b5bff12}
+.how-guide .guide-step-number{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:50%;background:var(--soft);color:var(--blue-d);font-weight:600}
+.how-guide [aria-current] .guide-step-number{background:var(--blue);color:white}
+.how-guide .guide-step-icon{margin-left:auto;display:flex;color:var(--blue-d)}
+.how-guide .guide-card{background:white;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 14px 40px #263d6909}
+.how-guide .guide-progress{color:var(--blue-d);font-weight:600;font-size:13px;margin-bottom:16px}
+.how-guide .guide-explanation{margin:12px 0 22px}
+.how-guide .guide-preview{padding:22px;border-radius:18px;background:var(--soft);margin-bottom:20px}
+.how-guide .guide-example-label{font-size:11px;letter-spacing:.6px;margin-bottom:20px;color:var(--navy)}
+.how-guide .guide-specialties{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.how-guide .guide-specialty{background:white;border:1px solid var(--line);padding:16px;border-radius:14px}
+.how-guide .guide-specialty>span{display:inline-flex;padding:10px;border-radius:12px;margin-bottom:10px}
+.how-guide .guide-specialty p{font-size:12px;margin-top:5px}
+.how-guide .guide-doctor{display:flex;gap:18px;align-items:center}
+.how-guide .guide-doctor img{border-radius:16px;object-fit:cover;flex-shrink:0}
+.how-guide .guide-doctor p{font-size:13px}
+.how-guide .guide-rating{color:var(--blue-d);font-weight:600;margin-top:6px}
+.how-guide .guide-facts{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin:20px 0;padding:14px;background:white;border-radius:12px}
+.how-guide .guide-review{margin:20px 0 0;background:white;border-radius:14px;padding:18px}
+.how-guide .guide-review p{margin-bottom:12px}
+.how-guide .guide-review footer{font-size:12px}
+.how-guide .guide-days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:16px 0;text-align:center}
+.how-guide .guide-days span{padding:8px 2px;border-radius:8px;background:white}
+.how-guide .guide-days span:nth-child(-n+7){background:transparent;font-weight:600}
+.how-guide .guide-days .is-selected{background:var(--blue);color:white;font-weight:600}
+.how-guide .guide-times{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.how-guide .guide-times>*{padding:8px 12px;border:1px solid var(--line);background:white;border-radius:10px}
+.how-guide .guide-times strong{color:var(--blue-d);border-color:var(--blue)}
+.how-guide .guide-summary{margin:14px 0}
+.how-guide .guide-summary>div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #c6d6f0}
+.how-guide .guide-summary dt{font-size:13px}
+.how-guide .guide-summary dd{margin:0;text-align:right;font-weight:500}
+.how-guide .guide-note{font-size:13px;margin-top:16px}
+.how-guide .guide-booking-status{display:inline-block;border-radius:10px;padding:10px 14px;background:#d2f3ec;color:#176452;font-weight:600}
+.how-guide .guide-link{font-weight:600;color:var(--blue-d);text-underline-offset:4px}
+.how-guide .guide-controls{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:22px;margin-top:22px}
+.how-guide button:disabled{opacity:.5;cursor:default}
+.how-guide :is(button,a,[tabindex]):focus-visible{outline:3px solid var(--blue-d);outline-offset:5px}
+.how-guide #guide-panel{border-radius:8px;animation:guide-reveal .25s ease}
+.how-guide .guide-finish{display:flex;gap:24px;justify-content:space-between;align-items:center;margin-top:36px;padding:30px;background:var(--hero);border-radius:20px}
+.how-guide .guide-finish h2{font-size:22px;margin-bottom:8px}
+.how-guide .guide-finish a{flex-shrink:0}
+@keyframes guide-reveal{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.how-guide .guide-layout{grid-template-columns:1fr;gap:20px}.how-guide .guide-steps ol{grid-template-columns:1fr 1fr}.how-guide .guide-steps button{height:100%;padding:12px;gap:8px;font-size:13px}.how-guide .guide-steps button[aria-current]{padding:11px}.how-guide .guide-step-icon{display:none}.how-guide .guide-card{padding:20px}.how-guide .guide-preview{padding:16px}.how-guide .guide-finish{flex-direction:column;align-items:start;padding:24px}.how-guide .guide-summary>div{flex-direction:column;gap:3px}.how-guide .guide-summary dd{text-align:left}}
+@media(max-width:380px){.how-guide .guide-specialties{grid-template-columns:1fr}.how-guide .guide-doctor{flex-direction:column;align-items:start}.how-guide .guide-steps button{font-size:12px}.how-guide .guide-step-number{flex-basis:26px;height:26px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.how-guide *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.how-guide .guide-days span:nth-child(8){grid-column:7}
+.how-guide .guide-preview{animation:guide-reveal .25s ease}
