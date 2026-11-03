@@ -19,8 +19,9 @@
     clearTimeout(timer);
     timer = null;
     const running = playing && !hovering && !focused && !document.hidden;
-    play.textContent = playing ? 'Pausar' : 'Reproducir';
+    play.textContent = playing ? 'Ⅱ' : '▶';
     play.setAttribute('aria-label', playing ? 'Pausar carrusel' : 'Reproducir carrusel');
+    play.title = playing ? 'Pausar carrusel' : 'Reproducir carrusel';
     status.setAttribute('aria-live', running ? 'off' : 'polite');
     if (running) timer = setTimeout(() => show(index + 1), 4000);
   }

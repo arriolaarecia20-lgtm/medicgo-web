@@ -133,10 +133,10 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
   await pause(4000);assert.equal(await current(),'1 de 3');
   assert(await evaluate('location.pathname.endsWith("index.html") && document.querySelector("#main-nav [aria-current=page]").getAttribute("href")==="index.html"'));
   await click('.hero-play');await pause(4200);assert.equal(await current(),'1 de 3');
-  await click('[data-direction="1"]');assert.equal(await current(),'2 de 3');
-  await click('[data-direction="-1"]');assert.equal(await current(),'1 de 3');
-  await click('.hero-indicators button:nth-child(3)');assert.equal(await current(),'3 de 3');
-  await evaluate('document.querySelector(".hero-indicators button").focus()');
+  await evaluate('document.querySelector(".hero-play").focus();document.querySelector(".hero-carousel").dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}))');assert.equal(await current(),'2 de 3');
+  await evaluate('document.querySelector(".hero-carousel").dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowLeft",bubbles:true}))');assert.equal(await current(),'1 de 3');
+  await evaluate('document.querySelector(".hero-carousel").dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowLeft",bubbles:true}))');assert.equal(await current(),'3 de 3');
+  await evaluate('document.querySelector(".hero-play").focus()');
   await call('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowRight',code:'ArrowRight'});assert.equal(await current(),'1 de 3');
   await click('.hero-play');
   await pause(4200);assert.equal(await current(),'1 de 3'); // focus keeps playback suspended
@@ -158,10 +158,19 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
     const sizes=[];
     let fixedContent;
     for(let i=1;i<=3;i++) {
-      await click('.hero-indicators button:nth-child('+i+')');await pause(750);
+      await evaluate('document.querySelector(".hero-play").focus()');
+      while(await current()!==i+' de 3') await call('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowRight',code:'ArrowRight'});
+      await pause(850);
       assert(await evaluate('[...document.querySelectorAll(".hero-photo")].every(i=>i.complete&&i.naturalWidth>0)'));
       sizes.push(await evaluate('document.querySelector(".hero-photo-frame").getBoundingClientRect().height'));
       assert(await evaluate('document.documentElement.scrollWidth<=innerWidth'));
+      assert(await evaluate(`(() => {
+        const hero = document.querySelector('#inicio').getBoundingClientRect();
+        const pause = document.querySelector('.hero-play').getBoundingClientRect();
+        return [...document.querySelectorAll('.hero-arrow,.hero-indicators')].every(e => getComputedStyle(e).display === 'none') &&
+          pause.width === 44 && pause.height === 44 && hero.right - pause.right <= 20 &&
+          hero.bottom - pause.bottom <= 16 && pause.bottom <= hero.bottom;
+      })()`));
       assert(await evaluate(`(() => {
         const hero = document.querySelector('#inicio'), frame = hero.querySelector('.hero-photo-frame');
         const bounds = hero.getBoundingClientRect(), photo = hero.querySelector('.is-active img');
@@ -193,7 +202,7 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
   }
   await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
   await go('index.html');await pause(4200);assert.equal(await current(),'1 de 3');
-  assert.equal(await evaluate('document.querySelector(".hero-play").textContent'),'Reproducir');
+  assert.equal(await evaluate('document.querySelector(".hero-play").getAttribute("aria-label")'),'Reproducir carrusel');
   await click('.hero-play');await evaluate('document.activeElement.blur()');await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:1,y:1});await pause(4200);assert.equal(await current(),'2 de 3');
   await navigateClick('.actions .btn','medicos.html');
   await go('index.html');await navigateClick('.actions .btn2','como-funciona.html');
