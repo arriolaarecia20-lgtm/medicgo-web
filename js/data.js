@@ -2,13 +2,13 @@
 window.MedicGO = {
   "iconos": {
     "medicina": "\n      <path d=\"M5 3v6a4 4 0 0 0 8 0V3\"/>\n      <path d=\"M9 13v1.5a5.5 5.5 0 0 0 11 0V13\"/>\n      <circle cx=\"20\" cy=\"11\" r=\"2\"/>\n    ",
-    "pediatria": "\n      <circle cx=\"12\" cy=\"12\" r=\"9\"/>\n      <path d=\"M8.5 14.5a4.5 4.5 0 0 0 7 0\"/>\n      <path d=\"M9 9.5h.01M15 9.5h.01\"/>\n    ",
+    "pediatria": "<circle cx=\"12\" cy=\"13\" r=\"8\"/><path d=\"M12 5c-3 0-3-4 0-3 2 1 0 3-1 3M9 16a4 4 0 0 0 6 0\"/><circle cx=\"9\" cy=\"11.5\" r=\".65\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"15\" cy=\"11.5\" r=\".65\" fill=\"currentColor\" stroke=\"none\"/>",
     "ginecologia": "\n      <circle cx=\"12\" cy=\"9\" r=\"5\"/>\n      <path d=\"M12 14v8M9 18h6\"/>\n    ",
     "piel": "\n      <path d=\"M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z\"/>\n    ",
     "huesos": "\n      <path d=\"M7 7a2.5 2.5 0 1 1-2.5-2.5A2.5 2.5 0 0 1 7 7l10 10a2.5 2.5 0 1 1 2.5 2.5A2.5 2.5 0 0 1 17 17L7 7z\"/>\n    ",
     "corazon": "\n      <path d=\"M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z\"/>\n      <path d=\"M8 12h2l1.5-2 2 4 1.5-2h1\"/>\n    ",
     "cerebro": "\n      <path d=\"M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 3 3 3 0 0 0 1.5 2.6A3 3 0 0 0 8 17a3 3 0 0 0 4 2V4.5A3 3 0 0 0 9 4zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 3 3 3 0 0 1-1.5 2.6A3 3 0 0 1 16 17a3 3 0 0 1-4 2V4.5A3 3 0 0 1 15 4z\"/>\n    ",
-    "cerebroPsiquiatria": "M4 12a8 8 0 1 1 16 0c0 3-2 5-5 6v3H8v-4H4v-5zM10 10c0-3 4-3 4 0 0 2-2 2-2 4m0 2h.01",
+    "cerebroPsiquiatria": "<path d=\"M8 21v-4H4v-5l-1-1 2-3a8 8 0 1 1 13 9v4\"/><path d=\"M12 13s-4-2.5-4-5a2.3 2.3 0 0 1 4-1.5A2.3 2.3 0 0 1 16 8c0 2.5-4 5-4 5z\"/>",
     "especialidad8": "<path d=\"M12 3v5m-3-3h6M7 22v-6l3-5h4l3 5v6M10 16v6m4-6v6M5 10h14\"/>",
     "especialidad9": "<path d=\"M12 3v18M5 7c0-4 5-4 7 0 2-4 7-4 7 0s-5 4-7 0c-2 4-7 4-7 0M6 16h12m-9-3v6m6-6v6\"/>",
     "especialidad10": "<path d=\"M8 3h8v4H8zM6 5H4v17h16V5h-2M8 12h8m-4-4v8\"/>",
@@ -36,8 +36,8 @@ window.MedicGO = {
       "nombre": "Pediatría",
       "descripcion": "Acompañamiento de la salud infantil",
       "icono": "pediatria",
-      "color": "#d9822b",
-      "fondo": "#fff1de",
+      "color": "#a85a00",
+      "fondo": "#fff0dc",
       "detalle": "Consulta de seguimiento del crecimiento y revisión de inquietudes sobre los cuidados cotidianos de niñas y niños.",
       "tema": "crecimiento y cuidados infantiles"
     },
@@ -45,8 +45,8 @@ window.MedicGO = {
       "nombre": "Ginecología",
       "descripcion": "Orientación en salud ginecológica",
       "icono": "ginecologia",
-      "color": "#d9446b",
-      "fondo": "#ffe6ee",
+      "color": "#b52b76",
+      "fondo": "#fce5f2",
       "detalle": "Revisión de antecedentes y orientación en salud ginecológica. Las pruebas y procedimientos que requieren equipamiento se realizan en un centro.",
       "tema": "antecedentes ginecológicos"
     },
@@ -54,8 +54,8 @@ window.MedicGO = {
       "nombre": "Dermatología",
       "descripcion": "Orientación para el cuidado de la piel",
       "icono": "piel",
-      "color": "#c0455f",
-      "fondo": "#ffe9ec",
+      "color": "#b33f35",
+      "fondo": "#fde8e3",
       "detalle": "Revisión clínica de inquietudes sobre piel, cabello y uñas, con orientación para su seguimiento.",
       "tema": "cuidados de la piel"
     },
@@ -63,8 +63,8 @@ window.MedicGO = {
       "nombre": "Traumatología",
       "descripcion": "Evaluación de huesos y articulaciones",
       "icono": "huesos",
-      "color": "#1b78ff",
-      "fondo": "#e1efff",
+      "color": "#15789e",
+      "fondo": "#e1f3fb",
       "detalle": "Consulta para revisar molestias del aparato locomotor y el seguimiento de la movilidad cotidiana.",
       "tema": "movilidad cotidiana"
     },
@@ -72,8 +72,8 @@ window.MedicGO = {
       "nombre": "Cardiología",
       "descripcion": "Seguimiento de la salud cardiovascular",
       "icono": "corazon",
-      "color": "#e0405a",
-      "fondo": "#ffe6ea",
+      "color": "#c52d48",
+      "fondo": "#ffe6ec",
       "detalle": "Revisión de antecedentes, informes y hábitos relacionados con la salud cardiovascular.",
       "tema": "antecedentes cardiovasculares"
     },
@@ -81,8 +81,8 @@ window.MedicGO = {
       "nombre": "Psiquiatría",
       "descripcion": "Acompañamiento de la salud mental",
       "icono": "cerebroPsiquiatria",
-      "color": "#2563eb",
-      "fondo": "#e1e9ff",
+      "color": "#7542b8",
+      "fondo": "#f0e7fc",
       "detalle": "Consulta para conversar sobre bienestar emocional, revisar antecedentes y organizar un seguimiento individual.",
       "tema": "bienestar emocional"
     },
@@ -90,8 +90,8 @@ window.MedicGO = {
       "nombre": "Neurología",
       "descripcion": "Seguimiento del sistema nervioso",
       "icono": "cerebro",
-      "color": "#1b5bff",
-      "fondo": "#e4edff",
+      "color": "#4c52b8",
+      "fondo": "#e9ebff",
       "detalle": "Evaluación clínica y revisión de antecedentes neurológicos, con orientación sobre el seguimiento y los cuidados en casa.",
       "tema": "seguimiento neurológico"
     },
@@ -101,8 +101,8 @@ window.MedicGO = {
       "detalle": "Seguimiento del bienestar y de las rutinas de cuidado de personas mayores en su entorno familiar.",
       "tema": "movilidad y rutinas diarias",
       "icono": "especialidad8",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#8a6135",
+      "fondo": "#f4eadb"
     },
     {
       "nombre": "Endocrinología",
@@ -110,8 +110,8 @@ window.MedicGO = {
       "detalle": "Revisión de antecedentes y seguimiento de condiciones hormonales y metabólicas con orientación para el cuidado cotidiano.",
       "tema": "hábitos y seguimiento metabólico",
       "icono": "especialidad9",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#8a7300",
+      "fondo": "#faf3ce"
     },
     {
       "nombre": "Medicina interna",
@@ -119,8 +119,8 @@ window.MedicGO = {
       "detalle": "Evaluación clínica de personas adultas y revisión conjunta de antecedentes, tratamientos y necesidades de seguimiento.",
       "tema": "antecedentes y tratamientos",
       "icono": "especialidad10",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#087f78",
+      "fondo": "#ddf5f1"
     },
     {
       "nombre": "Gastroenterología",
@@ -128,8 +128,8 @@ window.MedicGO = {
       "detalle": "Consulta para revisar molestias digestivas, antecedentes y hábitos. Los estudios instrumentales requieren un centro adecuado.",
       "tema": "hábitos y molestias digestivas",
       "icono": "especialidad11",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#c05b18",
+      "fondo": "#fff0e3"
     },
     {
       "nombre": "Neumología",
@@ -137,8 +137,8 @@ window.MedicGO = {
       "detalle": "Revisión clínica de síntomas y antecedentes respiratorios y acompañamiento de su seguimiento en casa.",
       "tema": "síntomas y rutinas respiratorias",
       "icono": "especialidad12",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#297fad",
+      "fondo": "#e5f3ff"
     },
     {
       "nombre": "Reumatología",
@@ -146,8 +146,8 @@ window.MedicGO = {
       "detalle": "Evaluación de molestias articulares y seguimiento de condiciones reumatológicas con atención a las actividades diarias.",
       "tema": "movilidad y molestias articulares",
       "icono": "especialidad13",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#77812c",
+      "fondo": "#f1f5d9"
     },
     {
       "nombre": "Urología",
@@ -155,8 +155,8 @@ window.MedicGO = {
       "detalle": "Consulta para revisar antecedentes y molestias urinarias. Los procedimientos y estudios especializados se realizan en centros adecuados.",
       "tema": "antecedentes y salud urinaria",
       "icono": "especialidad14",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#227d50",
+      "fondo": "#e1f4e8"
     },
     {
       "nombre": "Nefrología",
@@ -164,8 +164,8 @@ window.MedicGO = {
       "detalle": "Revisión de antecedentes, informes disponibles y hábitos relacionados con el cuidado renal y su seguimiento.",
       "tema": "informes y cuidado renal",
       "icono": "especialidad15",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#8a4d97",
+      "fondo": "#f3e8f6"
     },
     {
       "nombre": "Otorrinolaringología",
@@ -173,8 +173,8 @@ window.MedicGO = {
       "detalle": "Orientación clínica sobre molestias de oído, nariz y garganta; las exploraciones que requieren equipamiento se derivan a un centro.",
       "tema": "molestias de oído, nariz y garganta",
       "icono": "especialidad16",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#536d87",
+      "fondo": "#e9f0f7"
     },
     {
       "nombre": "Oftalmología",
@@ -182,8 +182,8 @@ window.MedicGO = {
       "detalle": "Revisión de antecedentes visuales y orientación inicial. Las pruebas con aparatos y procedimientos se realizan en un centro especializado.",
       "tema": "antecedentes y necesidades visuales",
       "icono": "especialidad17",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#ac3d8d",
+      "fondo": "#fbe7f5"
     },
     {
       "nombre": "Alergología",
@@ -191,8 +191,8 @@ window.MedicGO = {
       "detalle": "Consulta para revisar antecedentes, síntomas y posibles desencadenantes. Las pruebas y procedimientos requieren instalaciones adecuadas.",
       "tema": "síntomas y posibles desencadenantes",
       "icono": "especialidad18",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#478139",
+      "fondo": "#eaf5df"
     },
     {
       "nombre": "Medicina familiar",
@@ -200,8 +200,8 @@ window.MedicGO = {
       "detalle": "Acompañamiento de diferentes etapas de la vida y orientación sobre cuidados, prevención y continuidad de la atención familiar.",
       "tema": "rutinas de cuidado familiar",
       "icono": "especialidad19",
-      "color": "#1b5bff",
-      "fondo": "#e4edff"
+      "color": "#98624f",
+      "fondo": "#f8eae2"
     }
   ],
   "medicos": [
