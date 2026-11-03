@@ -1,13 +1,22 @@
 # Imágenes
 Fotografías ilustrativas. No representan a los médicos ficticios de la web ni acreditan profesión, especialidad o respaldo de las personas retratadas.
 
-- Portada: https://images.unsplash.com/photo-1559839734-2b71ea197ec2
+- Portada anterior (assets/hero.jpg, conservada sin uso en el inicio): https://images.unsplash.com/photo-1559839734-2b71ea197ec2
 - assets/doctor-0.jpg: https://images.unsplash.com/photo-1622253692010-333f2da6031d
 - assets/doctor-1.jpg: https://images.unsplash.com/photo-1594824476967-48c8b964273f
 - assets/doctor-3.jpg: https://images.unsplash.com/photo-1612349317150-e413f6a5b16d
 
 Fuente tipográfica: Poppins mediante Google Fonts; si no hay conexión se usa Arial. El resto de imágenes se incluye localmente.
 Logo provisional e iconos SVG procedentes del proyecto entregado por la usuaria. Ilustración alternativa SVG creada para esta versión.
+
+## Fotografía principal de atención a domicilio — 2 de noviembre de 2026
+
+- Autor: [Vitaly Gariev](https://unsplash.com/@silverkblack).
+- Fuente: [Doctor consults with an elderly patient on a couch](https://unsplash.com/photos/doctor-consults-with-an-elderly-patient-on-a-couch-7M5YI0RM3uA), publicada el 24 de septiembre de 2025.
+- Permiso: [licencia Unsplash](https://unsplash.com/license), que permite descargar y usar la fotografía gratuitamente, también en sitios web comerciales. No se atribuye respaldo ni identidad médica real a las personas retratadas.
+- Archivos locales: assets/hero-domicilio.jpg (1200 × 675, 105584 bytes) y assets/hero-domicilio-720.jpg (720 × 405, 47027 bytes).
+- Fuente de descarga: https://images.unsplash.com/photo-1758691462477-976f771224d8?fit=max&fm=jpg&q=78&w=1200 ; variante móvil: mismo archivo, q=76 y w=720.
+- Revisión visual del archivo descargado: médica con bata blanca, gafas y estetoscopio, conversando con un hombre mayor de cabello blanco en un sofá; sala doméstica con plantas y luz natural. Se mantienen visibles ambos rostros con un encuadre centrado. La animación de CSS mueve únicamente la fotografía y las etiquetas; no es un video.
 
 ## Fotografías clínicas de los 40 perfiles académicos
 
