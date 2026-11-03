@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b5bff">
+  <meta name="description" content="Medic GO: encuentra especialidades, conoce nuestros médicos y elige tu horario de atención a domicilio.">
+  <title>Medic GO · Reserva</title>
+  <!-- Poppins desde Google Fonts (temporal). Si falla, se usa Arial. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <!-- Identidad visual compartida del proyecto. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b5bff"/><stop offset="1" stop-color="#27c9c0"/></linearGradient></defs>
+    <symbol id="logo" viewBox="0 0 48 44"><path d="M24 42S3 29 3 14.5A10.5 10.5 0 0 1 24 10a10.5 10.5 0 0 1 21 4.5C45 29 24 42 24 42z" fill="url(#lg)"/><path d="M21 15h6v6h6v6h-6v6h-6v-6h-6v-6h6z" fill="#fff"/></symbol>
+  </svg>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="inicio-top">
+    <div class="container bar">
+      <a class="brand" href="index.html" aria-label="Medic GO, ir al inicio"><svg width="44" height="40"><use href="#logo"/></svg><span>Medic<b>GO</b></span></a>
+      <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <nav class="nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="especialidades.html">Especialidades</a>
+        <a aria-current="page" href="medicos.html">Médicos</a>
+        <a href="como-funciona.html">Cómo funciona</a>
+        <a href="mis-reservas.html">Mis reservas</a>
+
+        <a class="btn" href="medicos.html">Buscar médico</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido"><section class="section container detail-page" id="reserve-content"></section></main>
+
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div><a class="brand light" href="index.html"><svg width="40" height="36"><use href="#logo"/></svg><span>Medic<b>GO</b></span></a><p>Tu salud, en casa.<br>Atención que se adapta a ti.</p></div>
+      <div><h3>Explorar</h3><a href="especialidades.html">Especialidades</a><a href="medicos.html">Médicos</a><a href="como-funciona.html">Cómo funciona</a><a href="mis-reservas.html">Mis reservas</a></div>
+      <div><h3>Medic GO</h3><p>Explora especialidades, conoce perfiles y organiza tu próxima consulta.</p></div>
+    </div>
+    <p class="copy container">Proyecto académico. Perfiles, opiniones y reservas de ejemplo</p>
+  </footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

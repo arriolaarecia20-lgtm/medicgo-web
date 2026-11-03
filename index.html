@@ -11,10 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
   <script src="js/app.js" defer></script>
 </head>
 <body>
-  <!-- Logo provisional (se reutiliza con <use>). Se cambiará por el exportado de Figma. -->
+  <!-- Identidad visual compartida del proyecto. -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b5bff"/><stop offset="1" stop-color="#27c9c0"/></linearGradient></defs>
     <symbol id="logo" viewBox="0 0 48 44"><path d="M24 42S3 29 3 14.5A10.5 10.5 0 0 1 24 10a10.5 10.5 0 0 1 21 4.5C45 29 24 42 24 42z" fill="url(#lg)"/><path d="M21 15h6v6h6v6h-6v6h-6v-6h-6v-6h6z" fill="#fff"/></symbol>
@@ -27,81 +28,48 @@
       <a class="brand" href="index.html" aria-label="Medic GO, ir al inicio"><svg width="44" height="40"><use href="#logo"/></svg><span>Medic<b>GO</b></span></a>
       <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <nav class="nav" id="main-nav" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#especialidades">Especialidades</a>
-        <a href="#medicos">Médicos</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#mis-reservas">Mis reservas</a>
-        
-        <a class="btn" href="#especialidades">Buscar médico</a>
+        <a aria-current="page" href="index.html">Inicio</a>
+        <a href="especialidades.html">Especialidades</a>
+        <a href="medicos.html">Médicos</a>
+        <a href="como-funciona.html">Cómo funciona</a>
+        <a href="mis-reservas.html">Mis reservas</a>
+
+        <a class="btn" href="medicos.html">Buscar médico</a>
       </nav>
     </div>
   </header>
 
-  <main id="contenido">
-    <section class="hero" id="inicio">
+  <main id="contenido">    <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-text">
           <span class="eyebrow">Tu salud, en casa</span>
           <h1>Atención médica<br>a domicilio</h1>
           <p class="lead">Encuentra la atención que necesitas, cerca de ti. Explora nuestras especialidades, conoce a nuestros médicos y elige el horario que mejor se adapte a tu día.</p>
-          <div class="actions"><a class="btn big" href="#especialidades">Buscar médico</a><a class="btn2 big" href="#como-funciona">Cómo funciona</a></div>
+          <div class="actions"><a class="btn big" href="medicos.html">Buscar médico</a><a class="btn2 big" href="como-funciona.html">Cómo funciona</a></div>
           <ul class="chips"><li>Atención en casa</li><li>Horarios flexibles</li><li>Diferentes especialidades</li></ul>
         </div>
         <div class="art"><img class="hero-photo" src="assets/hero.jpg" alt="Profesional de salud con bata y estetoscopio"><span class="art-chip">Tu salud, más cerca</span><div class="art-card cal"><b>Elige tu horario</b><span>Atención a tu ritmo</span></div></div>
       </div>
-    </section>
-
-    <section class="container search-wrap" aria-label="Buscador">
+    </section>    <section class="container search-wrap" aria-label="Buscador">
       <form class="search" id="search-form" role="search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
         <input id="search" type="search" placeholder="Buscar especialidad o médico…" aria-label="Buscar especialidad o médico" autocomplete="off">
         <button class="btn" type="submit">Buscar</button>
       </form>
       <p class="hint">Encuentra atención por especialidad o nombre del médico.</p>
-    </section>
-
-    <section class="section container" id="especialidades">
-      <div class="head"><div><h2>Especialidades</h2><p class="muted">Encuentra la especialidad que necesitas.</p></div></div>
+    </section>    <section class="section container" id="especialidades">
+      <div class="head"><div><h2>Especialidades</h2><p class="muted">Encuentra la especialidad que necesitas.</p></div><a class="btn2" href="especialidades.html">Ver todas las especialidades</a></div>
       <div class="tiles" id="tiles"></div>
-      <p class="empty" id="no-spec" hidden>No encontramos esa especialidad.</p>
-    </section>
-
-    <section class="steps-band" id="como-funciona">
-      <div class="container">
-        <h2>Cómo funciona</h2>
-        <ol class="steps">
-          <li><span>1</span><h3>Elige</h3><p>Escoge una especialidad.</p></li>
-          <li><span>2</span><h3>Compara</h3><p>Revisa perfiles y tarifas.</p></li>
-          <li><span>3</span><h3>Fecha y hora</h3><p>Selecciona un horario disponible.</p></li>
-          <li><span>4</span><h3>Confirma</h3><p>Revisa el resumen de tu reserva.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section container" id="medicos">
-      <div class="head"><div><h2>Encuentra a tu médico</h2><p class="muted">Conoce los perfiles y elige la atención que buscas.</p></div><button class="btn2" id="reset-filters">Ver todos</button></div>
-      <div class="filters"><label>Especialidad<select id="specialty"><option value="">Todas las especialidades</option></select></label><label>Disponibilidad<select id="availability"><option value="">Cualquier día</option><option value="today">Hoy</option><option value="tomorrow">Desde mañana</option></select></label><label>Ordenar por<select id="sort"><option value="recommended">Recomendados</option><option value="low">Menor precio</option><option value="high">Mayor precio</option><option value="rating">Mejor valoración</option></select></label></div><p id="result-count" class="muted" role="status"></p><div class="docs" id="docs"></div><button class="btn2 load-more" id="load-more">Ver más médicos</button>
-      <p class="empty" id="no-doc" hidden>No encontramos ese médico.</p>
-    </section>
-
-    <section class="container bands"><div class="band blue"><span class="ico">♥</span><div><h3>Tu bienestar, más cerca</h3><p>Explora las especialidades y encuentra una opción para cada etapa de tu vida.</p></div></div><div class="band sand"><span class="ico">⌂</span><div><h3>Cuida a tu familia</h3><p>Conoce las opciones de pediatría y medicina general.</p></div><a class="btn2" href="#especialidades">Ver especialidades</a></div></section>
-    <section class="section container" id="mis-reservas">
-      <div class="head"><div><h2>Mis reservas</h2><p class="muted">Consulta y organiza tus horarios desde este navegador.</p></div><button class="btn2" id="clear" hidden>Borrar mis reservas</button></div>
-      <div id="bookings"></div>
-    </section>
-  </main>
+    </section><section class="section container"><div class="head"><div><h2>Médicos destacados</h2><p class="muted">Conoce sus perfiles y encuentra la atención que buscas.</p></div><a class="btn2" href="medicos.html">Ver todos los médicos</a></div><div class="docs" id="featured-docs"></div></section></main>
 
   <footer class="footer">
     <div class="container foot-grid">
       <div><a class="brand light" href="index.html"><svg width="40" height="36"><use href="#logo"/></svg><span>Medic<b>GO</b></span></a><p>Tu salud, en casa.<br>Atención que se adapta a ti.</p></div>
-      <div><h3>Explorar</h3><a href="#especialidades">Especialidades</a><a href="#medicos">Médicos</a><a href="#como-funciona">Cómo funciona</a><a href="#mis-reservas">Mis reservas</a></div>
+      <div><h3>Explorar</h3><a href="especialidades.html">Especialidades</a><a href="medicos.html">Médicos</a><a href="como-funciona.html">Cómo funciona</a><a href="mis-reservas.html">Mis reservas</a></div>
       <div><h3>Medic GO</h3><p>Explora especialidades, conoce perfiles y organiza tu próxima consulta.</p></div>
     </div>
-    <p class="copy container">Medic GO · Proyecto académico · Fotografías ilustrativas</p>
+    <p class="copy container">Proyecto académico. Perfiles, opiniones y reservas de ejemplo</p>
   </footer>
-  <dialog id="profile-dialog" aria-labelledby="profile-title"><button class="close-dialog" aria-label="Cerrar perfil" data-close>×</button><div id="profile-content"></div></dialog>
-  <dialog id="reserve-dialog" aria-labelledby="reserve-title"><button class="close-dialog" aria-label="Cerrar reserva" data-close>×</button><div id="reserve-content"></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
