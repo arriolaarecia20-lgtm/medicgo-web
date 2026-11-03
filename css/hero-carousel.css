@@ -1,0 +1,90 @@
+/* Loaded after the shared stylesheet: all rules belong to the home hero. */
+#inicio.hero-carousel {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  min-height: calc(100vh - var(--header-height, 73px));
+  min-height: calc(100svh - var(--header-height, 73px));
+  padding: 48px 0 36px;
+  overflow: hidden;
+  color: white;
+  background: #10284a;
+}
+#inicio .hero-photo-frame { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+#inicio .hero-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(6 25 57 / 84%), rgb(10 39 74 / 62%));
+}
+#inicio .hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .8s ease, visibility .8s;
+}
+#inicio .hero-slide.is-active { opacity: 1; visibility: visible; }
+#inicio .hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: blur(2px);
+  transform: scale(1.015);
+}
+#inicio .hero-slide-portrait .hero-photo { object-position: center 30%; }
+#inicio .hero-grid { display: block; width: 100%; position: relative; }
+#inicio .hero-text { width: 100%; max-width: 740px; padding: 0; background: none; border-radius: 0; box-shadow: none; }
+#inicio h1 { color: white; font-size: clamp(36px, 5vw, 64px); line-height: 1.12; }
+#inicio .eyebrow { color: #a5f4ef; }
+#inicio .lead { color: white; max-width: 630px; line-height: 1.7; }
+#inicio .chips li { color: white; background: rgb(13 43 73 / 65%); border-color: #ffffff66; }
+#inicio .chips li::before { color: #a5f4ef; }
+#inicio .hero-footer { width: 100%; position: relative; }
+#inicio .hero-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+#inicio .hero-controls[hidden] { display: none; }
+#inicio .hero-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  font: inherit;
+  color: white;
+  background: rgb(10 34 62 / 65%);
+  border: 1px solid #ffffff80;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#inicio .hero-controls button:hover { background: #155f83; }
+#inicio .hero-controls button:focus-visible { outline: 3px solid #a5f4ef; outline-offset: 3px; }
+#inicio .hero-controls .hero-arrow { font-size: 22px; }
+#inicio .hero-indicators { display: flex; gap: 0; }
+#inicio .hero-indicators button { background: transparent; border-color: transparent; }
+#inicio .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: #ffffff88; }
+#inicio [aria-current] .hero-dot { background: #a5f4ef; box-shadow: 0 0 0 4px #a5f4ef33; }
+#inicio .hero-controls .hero-play { border-radius: 24px; padding: 0 16px; font-size: 13px; min-width: 100px; }
+#inicio .hero-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+/* The search starts below the full viewport hero, without overlapping it. */
+#inicio + .search-wrap { margin-top: 24px; }
+@media (max-width: 600px) {
+  #inicio.hero-carousel { padding: 32px 0 28px; gap: 24px; }
+  #inicio .lead { font-size: 15px; line-height: 1.6; }
+  #inicio .hero-controls { gap: 4px; }
+  #inicio .hero-indicators button { min-width: 32px; }
+  #inicio .hero-controls .hero-play { padding: 0 12px; min-width: 96px; }
+  #inicio .hero-photo { object-position: 55% center; }
+  #inicio .hero-slide-portrait .hero-photo { object-position: 45% 30%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #inicio .hero-slide { transition: none; }
+}

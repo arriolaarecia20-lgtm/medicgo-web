@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/hero-carousel.css?v=3">
   <script src="js/data.js" defer></script>
   <script src="js/app.js" defer></script>
   <script src="js/hero-carousel.js" defer></script>
@@ -43,13 +44,13 @@
   <main id="contenido">    <section class="hero hero-carousel" id="inicio" aria-label="Atención médica a domicilio" aria-roledescription="carrusel">
             <div class="hero-photo-frame" id="hero-slides">
               <div class="hero-slide is-active" role="group" aria-roledescription="diapositiva" aria-label="1 de 3" aria-hidden="false">
-                <img class="hero-photo" src="assets/hero-domicilio.jpg" srcset="assets/hero-domicilio-720.jpg 720w, assets/hero-domicilio.jpg 1200w" sizes="(max-width: 760px) 100vw, 60vw" width="1200" height="675" fetchpriority="high" decoding="async" alt="Médica con bata y estetoscopio atendiendo a un adulto mayor en el sofá de su hogar">
+                <img class="hero-photo" src="assets/hero-domicilio.jpg" srcset="assets/hero-domicilio-720.jpg 720w, assets/hero-domicilio.jpg 1200w" sizes="100vw" width="1200" height="675" fetchpriority="high" decoding="async" alt="Médica con bata y estetoscopio atendiendo a un adulto mayor en el sofá de su hogar">
               </div>
               <div class="hero-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 3" aria-hidden="true">
-                <img class="hero-photo" src="assets/hero-pediatria.jpg" srcset="assets/hero-pediatria-720.jpg 720w, assets/hero-pediatria.jpg 1200w" sizes="(max-width: 760px) 100vw, 60vw" width="1200" height="801" decoding="async" alt="Médica atendiendo a una niña acompañada de su madre en el sofá de su casa">
+                <img class="hero-photo" src="assets/hero-pediatria.jpg" srcset="assets/hero-pediatria-720.jpg 720w, assets/hero-pediatria.jpg 1200w" sizes="100vw" width="1200" height="801" decoding="async" alt="Médica atendiendo a una niña acompañada de su madre en el sofá de su casa">
               </div>
               <div class="hero-slide hero-slide-portrait" role="group" aria-roledescription="diapositiva" aria-label="3 de 3" aria-hidden="true">
-                <img class="hero-photo" src="assets/hero-chequeo.jpg" srcset="assets/hero-chequeo-480.jpg 480w, assets/hero-chequeo.jpg 800w" sizes="(max-width: 600px) 200px, 300px" width="800" height="1198" decoding="async" alt="Profesional médica midiendo la presión arterial a una mujer adulta en su cama, en casa">
+                <img class="hero-photo" src="assets/hero-chequeo.jpg" srcset="assets/hero-chequeo-480.jpg 480w, assets/hero-chequeo.jpg 800w" sizes="100vw" width="800" height="1198" decoding="async" alt="Profesional médica midiendo la presión arterial a una mujer adulta en su cama, en casa">
               </div>
             </div>
       <div class="container hero-grid">
@@ -65,15 +66,15 @@
             <div class="hero-controls" hidden>
               <button type="button" class="hero-arrow" data-direction="-1" aria-label="Fotografía anterior" aria-controls="hero-slides">&#8592;</button>
               <div class="hero-indicators" role="group" aria-label="Elegir fotografía">
-                <button type="button" aria-label="Ver fotografía 1: atención a una persona mayor" aria-current="true" aria-controls="hero-slides"></button>
-                <button type="button" aria-label="Ver fotografía 2: atención pediátrica" aria-controls="hero-slides"></button>
-                <button type="button" aria-label="Ver fotografía 3: chequeo en casa" aria-controls="hero-slides"></button>
+                <button type="button" aria-label="Ver fotografía 1: atención a una persona mayor" aria-current="true" aria-controls="hero-slides"><span class="hero-dot" aria-hidden="true"></span></button>
+                <button type="button" aria-label="Ver fotografía 2: atención pediátrica" aria-controls="hero-slides"><span class="hero-dot" aria-hidden="true"></span></button>
+                <button type="button" aria-label="Ver fotografía 3: chequeo en casa" aria-controls="hero-slides"><span class="hero-dot" aria-hidden="true"></span></button>
               </div>
               <button type="button" class="hero-arrow" data-direction="1" aria-label="Fotografía siguiente" aria-controls="hero-slides">&#8594;</button>
               <button type="button" class="hero-play" aria-controls="hero-slides">Pausar</button>
             </div>
             <span class="hero-status" role="status" aria-live="off" aria-atomic="true">Fotografía 1 de 3</span>
-          <span class="art-chip">Tu salud, más cerca</span><div class="art-card cal"><b>Elige tu horario</b><span>Atención a tu ritmo</span></div>
+
       </div>
     </section>    <section class="container search-wrap" aria-label="Buscador">
       <form class="search" id="search-form" role="search">

@@ -1,6 +1,10 @@
 (() => {
   const carousel = document.querySelector('.hero-carousel');
   if (!carousel) return;
+  const header = document.querySelector('.site-header');
+  const measureHeader = () => carousel.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
+  measureHeader();
+  new ResizeObserver(measureHeader).observe(header);
   const slides = [...carousel.querySelectorAll('.hero-slide')];
   const indicators = [...carousel.querySelectorAll('.hero-indicators button')];
   const play = carousel.querySelector('.hero-play');

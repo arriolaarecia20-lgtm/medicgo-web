@@ -159,6 +159,20 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
       assert(await evaluate('[...document.querySelectorAll(".hero-photo")].every(i=>i.complete&&i.naturalWidth>0)'));
       sizes.push(await evaluate('document.querySelector(".hero-photo-frame").getBoundingClientRect().height'));
       assert(await evaluate('document.documentElement.scrollWidth<=innerWidth'));
+      assert(await evaluate(`(() => {
+        const hero = document.querySelector('#inicio'), frame = hero.querySelector('.hero-photo-frame');
+        const bounds = hero.getBoundingClientRect(), photo = hero.querySelector('.is-active img');
+        const style = getComputedStyle(photo), header = document.querySelector('.site-header').getBoundingClientRect();
+        return bounds.width === document.documentElement.clientWidth && bounds.height >= innerHeight - header.height - 1 &&
+          frame.getBoundingClientRect().height === bounds.height &&
+          style.objectFit === 'cover' && style.borderRadius === '0px' && style.filter.includes('blur') &&
+          photo.getBoundingClientRect().width >= bounds.width &&
+          [...hero.querySelectorAll('.hero-slide')].every(s => getComputedStyle(s).position === 'absolute') &&
+          hero.querySelectorAll('.hero-slide[aria-hidden="false"]').length === 1 &&
+          getComputedStyle(hero.querySelector('.hero-status')).clipPath === 'inset(50%)' &&
+          getComputedStyle(hero.querySelector('h1')).color === 'rgb(255, 255, 255)' &&
+          getComputedStyle(hero.querySelector('.hero-text')).filter === 'none';
+      })()`));
       const content = await evaluate(`(() => {
         const nodes = [...document.querySelectorAll('#inicio h1, #inicio .lead, #inicio .actions a')];
         return nodes.map(node => {
