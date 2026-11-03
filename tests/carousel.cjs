@@ -140,7 +140,7 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
   await evaluate('document.activeElement.blur()');
   await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:1,y:1});
   await pause(4200);assert.equal(await current(),'2 de 3');
-  const box=await evaluate('(()=>{const b=document.querySelector(".hero-carousel").getBoundingClientRect();return {x:b.x+20,y:b.y+20}})()');
+  const box=await evaluate('(()=>{const b=document.querySelector(".hero-carousel").getBoundingClientRect();return {x:b.x+20,y:Math.max(100,b.y+20)}})()');
   await call('Input.dispatchMouseEvent',{type:'mouseMoved',...box});
   await pause(4200);assert.equal(await current(),'2 de 3');
   await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:1,y:1});
@@ -153,11 +153,23 @@ const screenshots = fs.mkdtempSync(path.join(os.tmpdir(), 'medicgo-flows-'));
   for(const width of [1440,390,320]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:width<600});
     const sizes=[];
+    let fixedContent;
     for(let i=1;i<=3;i++) {
       await click('.hero-indicators button:nth-child('+i+')');await pause(750);
       assert(await evaluate('[...document.querySelectorAll(".hero-photo")].every(i=>i.complete&&i.naturalWidth>0)'));
       sizes.push(await evaluate('document.querySelector(".hero-photo-frame").getBoundingClientRect().height'));
       assert(await evaluate('document.documentElement.scrollWidth<=innerWidth'));
+      const content = await evaluate(`(() => {
+        const nodes = [...document.querySelectorAll('#inicio h1, #inicio .lead, #inicio .actions a')];
+        return nodes.map(node => {
+          const style = getComputedStyle(node), box = node.getBoundingClientRect();
+          if (style.opacity !== '1' || style.visibility !== 'visible' || node.getAnimations().length) throw Error('Hero content must stay visible and static');
+          if (node.closest('.hero-slide')) throw Error('Content cannot belong to a slide');
+          return {text: node.textContent, href: node.getAttribute('href'), x: box.x, width: box.width, height: box.height};
+        });
+      })()`);
+      if (fixedContent) assert.deepEqual(content, fixedContent);
+      else fixedContent = content;
       await screenshot('hero-'+width+'-'+i);
     }
     assert(sizes.every(h=>h===sizes[0]));

@@ -309,15 +309,22 @@ button, input, select {
 }
 
 /* Carrusel limitado a la fotografía del inicio. */
-#inicio .hero-art { padding-top: 44px; padding-bottom: 75px; }
-#inicio .hero-carousel { width: 100%; min-width: 0; }
+#inicio { position: relative; isolation: isolate; padding: 52px 0 70px; overflow: hidden; }
+#inicio .hero-grid { display: block; position: relative; z-index: 1; }
+#inicio .hero-text {
+  width: 52%;
+  padding: 30px;
+  border-radius: 28px;
+  background: #f4f8ff;
+  box-shadow: 0 12px 40px #263d6914;
+}
 #inicio .hero-photo-frame {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   overflow: hidden;
-  border-radius: 30px;
-  box-shadow: 0 20px 44px #263d6920;
   background: linear-gradient(135deg, #dbeaff, #d7f4ef);
 }
 #inicio .hero-slide {
@@ -330,17 +337,19 @@ button, input, select {
 #inicio .hero-slide.is-active { opacity: 1; visibility: visible; }
 #inicio .hero-photo {
   display: block;
-  width: 100%;
+  width: 60%;
   height: 100%;
+  margin-left: auto;
   object-fit: cover;
   object-position: 50% 40%;
   border-radius: 0;
   box-shadow: none;
 }
-#inicio .hero-slide:first-child .hero-photo { object-fit: contain; }
+#inicio .hero-slide:first-child .hero-photo { object-fit: contain; object-position: right center; }
 #inicio .hero-slide-portrait .hero-photo { object-fit: contain; }
-#inicio .art-chip { top: 5px; right: 14px; }
-#inicio .art-card.cal { bottom: 0; left: 14px; padding: 8px 14px; }
+#inicio .hero-footer { position: relative; z-index: 1; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+#inicio .art-chip, #inicio .art-card.cal { position: static; padding: 8px 14px; }
+#inicio .hero-controls { padding: 6px; background: #f4f8ff; border-radius: 28px; }
 .hero-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; padding-top: 12px; }
 .hero-controls[hidden] { display: none; }
 .hero-controls button {
@@ -365,7 +374,16 @@ button, input, select {
 @media (max-width: 600px) {
   .hero-controls { gap: 2px; }
   .hero-indicators button { min-width: 36px; }
-  #inicio .hero-photo-frame { border-radius: 24px; }
+}
+@media (max-width: 1000px) and (min-width: 761px) {
+  #inicio .hero-text { width: 62%; padding: 24px; }
+}
+@media (max-width: 760px) {
+  #inicio { padding-top: 290px; }
+  #inicio .hero-photo-frame { height: 320px; }
+  #inicio .hero-photo { width: 100%; object-position: 50% 35%; }
+  #inicio .hero-text { width: 100%; padding: 24px 20px; }
+  #inicio .hero-footer { gap: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   #inicio .hero-slide { transition: none; }
