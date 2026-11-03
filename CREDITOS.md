@@ -1,4 +1,14 @@
 # Imágenes
+
+## Carrusel del inicio — 2 de noviembre de 2026
+
+Tres fotografías locales, revisadas visualmente después de descargarlas. Son escenas ilustrativas; no se atribuyen identidades ni especialidades reales a las personas retratadas.
+
+1. `assets/hero-domicilio.jpg` y `hero-domicilio-720.jpg`: Vitaly Gariev, [Doctor consults with an elderly patient on a couch](https://unsplash.com/photos/doctor-consults-with-an-elderly-patient-on-a-couch-7M5YI0RM3uA). Permiso: [licencia Unsplash](https://unsplash.com/license). Se reutilizan las descargas locales documentadas abajo. Verificado: médica con bata y estetoscopio conversando con un hombre mayor en el sofá de una sala.
+2. `assets/hero-pediatria.jpg` y `hero-pediatria-720.jpg`: Pavel Danilyuk, [A Doctor Checking a Child, Pexels 7653119](https://www.pexels.com/photo/a-doctor-checking-a-child-7653119/). [Descarga original optimizada](https://images.pexels.com/photos/7653119/pexels-photo-7653119.jpeg?auto=compress&cs=tinysrgb&w=1200), variante de 720 px con el mismo enlace y `w=720`. Verificado: médica con bata, gafas, estetoscopio y portapapeles atendiendo a una niña acompañada de su madre en el sofá de una vivienda.
+3. `assets/hero-chequeo.jpg` y `hero-chequeo-480.jpg`: Pavel Danilyuk, [Paramedic Checking On A Woman, Pexels 6753300](https://www.pexels.com/photo/paramedic-checking-on-a-woman-6753300/). [Descarga optimizada](https://images.pexels.com/photos/6753300/pexels-photo-6753300.jpeg?auto=compress&cs=tinysrgb&w=800), variante de 480 px con `w=480`. Verificado: profesional con uniforme sanitario rojo y estetoscopio tomando la presión arterial a una adulta en su cama. La imagen vertical se muestra completa para conservar ambos rostros y el instrumental.
+
+Las dos fotografías nuevas se usan bajo la [licencia Pexels](https://www.pexels.com/license/), que permite su descarga, uso y modificación gratuitos, incluido uso comercial, sin implicar respaldo de las personas retratadas. Se descargaron JPEG comprimidos por el proveedor; `srcset` sirve variantes pequeñas en móvil. El carrusel sustituye el zoom y el movimiento de las etiquetas anteriormente descritos por un fundido; las etiquetas permanecen fuera de las fotos y los controles.
 Fotografías ilustrativas. No representan a los médicos ficticios de la web ni acreditan profesión, especialidad o respaldo de las personas retratadas.
 
 - Portada anterior (assets/hero.jpg, conservada sin uso en el inicio): https://images.unsplash.com/photo-1559839734-2b71ea197ec2

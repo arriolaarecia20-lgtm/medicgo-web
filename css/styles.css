@@ -308,51 +308,67 @@ button, input, select {
   background: var(--soft);
 }
 
-/* Fotografía del inicio: el marco contiene el zoom sin cambiar el flujo. */
+/* Carrusel limitado a la fotografía del inicio. */
+#inicio .hero-art { padding-top: 44px; padding-bottom: 75px; }
+#inicio .hero-carousel { width: 100%; min-width: 0; }
 #inicio .hero-photo-frame {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 32px 100px 32px 32px;
+  border-radius: 30px;
   box-shadow: 0 20px 44px #263d6920;
-  background: var(--soft);
+  background: linear-gradient(135deg, #dbeaff, #d7f4ef);
 }
-
+#inicio .hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .65s ease, visibility .65s;
+}
+#inicio .hero-slide.is-active { opacity: 1; visibility: visible; }
 #inicio .hero-photo {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 42%;
+  object-position: 50% 40%;
   border-radius: 0;
   box-shadow: none;
-  transform-origin: 50% 38%;
-  animation: medicgo-photo-breathe 12s ease-in-out infinite;
 }
-
-#inicio .art-chip {
-  animation: medicgo-label-float 8s ease-in-out infinite;
+#inicio .hero-slide:first-child .hero-photo { object-fit: contain; }
+#inicio .hero-slide-portrait .hero-photo { object-fit: contain; }
+#inicio .art-chip { top: 5px; right: 14px; }
+#inicio .art-card.cal { bottom: 0; left: 14px; padding: 8px 14px; }
+.hero-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; padding-top: 12px; }
+.hero-controls[hidden] { display: none; }
+.hero-controls button {
+  border: 1px solid #c5d9ed;
+  background: white;
+  color: #1241a5;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  font: inherit;
 }
-
-#inicio .art-card.cal {
-  animation: medicgo-label-float 10s ease-in-out -3s infinite;
+.hero-controls button:hover { background: #e8f8f7; border-color: #168780; }
+.hero-controls button:focus-visible { outline: 3px solid #1b5bff; outline-offset: 3px; }
+.hero-indicators { display: flex; }
+.hero-indicators button { border: 0; background: transparent; position: relative; }
+.hero-indicators button::after { content: ''; display: block; width: 10px; height: 10px; border-radius: 50%; background: #71869c; margin: auto; }
+.hero-indicators button[aria-current]::after { background: #1b5bff; box-shadow: 0 0 0 4px #ccefeb; }
+.hero-controls .hero-play { border-radius: 22px; padding: 0 12px; font-size: 12px; min-width: 92px; }
+.hero-arrow { font-size: 20px !important; }
+.hero-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 600px) {
+  .hero-controls { gap: 2px; }
+  .hero-indicators button { min-width: 36px; }
+  #inicio .hero-photo-frame { border-radius: 24px; }
 }
-
-@keyframes medicgo-photo-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.035); }
-}
-
-@keyframes medicgo-label-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  #inicio .hero-photo, #inicio .art-chip, #inicio .art-card.cal {
-    animation: none;
-    transform: none;
-  }
+  #inicio .hero-slide { transition: none; }
 }
 
 .art-chip, .art-card {
